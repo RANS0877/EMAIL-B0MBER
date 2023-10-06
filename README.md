@@ -9,5 +9,7 @@ Use this tool for educational purpose only !!
 Usage :
 
 git clone https://github.com/RANS0877/EMAIL-B0MBER.git
+
 cd EMAIL_B0MBER
+
 python emailbomber.py
