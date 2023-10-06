@@ -1,6 +1,9 @@
 
+import os
 import smtplib
+import getpass
 import sys
+import time
 
 
 class bcolors:
